@@ -1,11 +1,11 @@
 const Controller = require('./Controllers');
 
 async function userRoutes(fastify, options) {
-  fastify.get('/LoggedIn', Controller.LoggedIn);
-  /*fastify.get('/UserCounter', Controller.UserCounter);
+  fastify.get('/UserCounter', Controller.UserCounter);
   fastify.get('/GetReviews', Controller.GetReviews);
   fastify.post('/SingUp', Controller.SingUp);
-  fastify.post('/PostReviews', Controller.PostReviews); */
+  fastify.post('/LoggedIn', Controller.LoggedIn);
+  fastify.post('/PostReviews', Controller.PostReviews); 
 
 }
 
