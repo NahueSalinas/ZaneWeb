@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    background-color: rgb(53, 53, 53);
+}
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: grid;
+    grid-template-areas: 
+    "home logo contact login";  
+    grid-gap: 10px;
+    padding: 3vh;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: auto;
+
+    max-height: 15vh;
+    background-color: #FDC600;
+}
+.home{
+    grid-area: home;
+    height: 15vh;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 4vh;
+    margin-left: 10vh;
+}
+.logo{
+    grid-area: logo;
+    height: 15%;
+    width: auto;
+    box-sizing: border-box;
+    padding: 4vh;
+}
+.contact{
+    grid-area: contact;
+    height: 15vh;
+    margin-right: 10vh;
+}
+.login{
+    grid-area: login;
+    height: 15vh;
+    margin-right: 10vh;
+}
+button {
+    background: #fbca1f;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  
+  button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic Navigation</title>
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <a href="#home" class="home-button">Home</a>
+            <select class="nav-select" onchange="location = this.value;">
+                <option value="#home">Home</option>
+                <option value="#about">About</option>
+                <option value="#services">Services</option>
+                <option value="#contact">Contact</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Home Section</h1>
+            <p>Content goes here...</p>
+        </section>
+        <section id="about">
+            <h1>About Section</h1>
+            <p>Content goes here...</p>
+        </section>
+        <section id="services">
+            <h1>Services Section</h1>
+            <p>Content goes here...</p>
+        </section>
+        <section id="contact">
+            <h1>Contact Section</h1>
+            <p>Content goes here...</p>
+        </section>
+    </main>
+</body>
+</html>

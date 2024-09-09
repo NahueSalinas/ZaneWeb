@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 10px 15px;
+    background-color: #444;
+    border-radius: 4px;
+}
+
+.home-button:hover {
+    background-color: #555;
+}
+
+.nav-select {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.nav-select option {
+    background-color: #333;
+    color: white;
+}
+
+.nav-select:focus {
+    outline: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+}
