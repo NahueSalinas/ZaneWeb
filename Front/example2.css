@@ -1,0 +1,175 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffb347, #ffcc33);
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    overflow-x: hidden;
+}
+
+/* Navigation bar at the top right */
+.top-navigation {
+    position: fixed; /* Fix the top navigation at the top */
+    top: 0;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Background for visibility */
+    padding: 10px;
+    z-index: 10;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    border: 2px solid #ffb347;
+    background-color: transparent;
+    color: #ffb347;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+    background: #ffb347;
+    color: white;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ffb347;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #ffb347;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    color: #ffcc33;
+}
+
+/* Initially hide the dropdown menu */
+.hidden {
+    display: none;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    position: relative;
+    padding-top: 100px; /* Push content down so it's not hidden by the fixed nav */
+}
+
+/* Subheading aligned to the left */
+.subheading {
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/* Main heading */
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 0;
+}
+
+/* Image styling */
+.elemento {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.lemonade-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Section styling */
+.section {
+    padding: 100px 20px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    scroll-margin-top: 100px; /* Space for fixed nav */
+}
+
+.section:nth-child(even) {
+    background-color: #ffb347;
+}
+
+/* Section title styling */
+.section-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 60px;
+    }
+    .subheading {
+        font-size: 20px;
+    }
+    .elemento {
+        width: 250px;
+    }
+    .nav-button {
+        font-size: 12px;
+    }
+}
