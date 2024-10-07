@@ -22,6 +22,7 @@
     "fastify": "^4.28.1",
     "fastq": "^1.17.1",
     "firebase-admin": "^12.4.0",
+    "firestone": "^0.1.1",
     "forwarded": "^0.2.0",
     "ieee754": "^1.2.1",
     "ipaddr.js": "^1.9.1",
