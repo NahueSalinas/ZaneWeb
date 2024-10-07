@@ -26,7 +26,7 @@ function UserCounter() {
 
   return (
     <div>
-      <h2>Usuarios registrados: {userCount}</h2>
+      <h2>Usuarios registrados: {userCount || 0}</h2>
     </div>
   )
 }

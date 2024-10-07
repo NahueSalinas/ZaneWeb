@@ -61,6 +61,7 @@ const SubmitReviewComponent = ({ isSignedIn }) => {
         onChange={(e) => updateReviewText(e.target.value)}
         placeholder="Write your review here..."
       />
+      <button>Submit</button>
     </div>
   );
 };

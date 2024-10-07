@@ -13,7 +13,7 @@ const ReviewsComponent = () => {
 
     // Fetch actual reviews
     try {
-      const response = await axios.get('http://localhost:8000/reviews');
+      const response = await axios.get('http://localhost:8000/GetReviews');
       setReviews(response.data.data); // Adjust according to your API response structure
     } catch (error) {
       setError(error.response ? error.response.data.message : error.message);

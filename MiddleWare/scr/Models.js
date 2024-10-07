@@ -12,7 +12,7 @@ async function reviews() {
 
     return { statusCode: 200, message: 'Got reviews successfully', data: reviews };
   } catch (error) {
-    return { statusCode: 500, message: 'Failed to get reviews', error: error.message };
+    return { statusCode: 500, message: 'Failed to get reviews :(', error: error.message };
   }
 }
 async function UserCounter() {
