@@ -6,7 +6,7 @@ async function reviews() {
     const snapshot = await db.collection('Users').get();
     const reviews = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-    if(reviews.empty()){
+    if(reviews.length === 0){
       return { statusCode: 404, message: 'No reviews...'};
     }
 
