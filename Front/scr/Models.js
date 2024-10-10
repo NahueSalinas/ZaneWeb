@@ -6,13 +6,13 @@ async function reviews() {
     const snapshot = await db.collection('Users').get();
     const reviews = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-    if(reviews.length === 0){
+    if(reviews.empty()){
       return { statusCode: 404, message: 'No reviews...'};
     }
 
     return { statusCode: 200, message: 'Got reviews successfully', data: reviews };
   } catch (error) {
-    return { statusCode: 500, message: 'Failed to get reviews :(', error: error.message };
+    return { statusCode: 500, message: 'Failed to get reviews', error: error.message };
   }
 }
 async function UserCounter() {

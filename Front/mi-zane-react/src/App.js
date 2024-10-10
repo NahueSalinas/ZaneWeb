@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React, { useState } from 'react';
+import ReviewsComponent from './components/ReviewsComponent';
+import SubmitReviewComponent from './components/SubmitReviewComponent';
+import UserCounter from './components/UserCounter';
+import View from './components/View';
+
+const App = () => {
+  const [isSignedIn, setIsSignedIn] = useState(false); // Change this based on your authentication logic
+  document.getElementById('root') // Este es el div del HTML
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Zane
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <View />
+      <UserCounter />
+      <SubmitReviewComponent isSignedIn={isSignedIn} />
+      <ReviewsComponent />
+      
     </div>
   );
-}
+};
 
 export default App;
