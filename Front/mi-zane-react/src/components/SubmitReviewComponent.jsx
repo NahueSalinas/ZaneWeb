@@ -54,14 +54,16 @@ const SubmitReviewComponent = ({ isSignedIn }) => {
 
   return (
     <div>
-      <h2>Submit a Review</h2>
+      <h2 className='submit-review-title'>Submit a Review</h2>
       <textarea
+        className='submit-review-text'
         id="review-text"
         value={reviewText}
-        onChange={(e) => updateReviewText(e.target.value)}
+            onChange={(e) => updateReviewText(e.target.value)}
         placeholder="Write your review here..."
       />
-      <button>Submit</button>
+      <br></br>
+      <button className='submit-button' onClick={handleSubmit}>Submit</button>
     </div>
   );
 };

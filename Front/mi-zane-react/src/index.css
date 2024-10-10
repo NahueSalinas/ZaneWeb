@@ -175,5 +175,21 @@ h1 {
 }
 .usuarios-registrados{
   text-align: center  ;
-  
+  font-size:  30px;
+  padding: 70px;
+}
+.submit-review-title{
+  font-size: 30px;
+  padding: 35px;
+}
+.submit-review-text{
+  margin-left: 37px;
+}
+.submit-button{
+  margin-left: 37px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(147, 218, 42);
+  color: white  ;
+  cursor: pointer;
 }
