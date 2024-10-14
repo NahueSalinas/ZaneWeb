@@ -175,21 +175,25 @@ h1 {
 }
 .usuarios-registrados{
   text-align: center  ;
-  font-size:  30px;
-  padding: 70px;
+  
 }
-.submit-review-title{
-  font-size: 30px;
-  padding: 35px;
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.submit-review-text{
-  margin-left: 37px;
-}
-.submit-button{
-  margin-left: 37px;
-  padding: 10px;
+
+.popup {
+  background: white;
+  padding: 20px;
   border-radius: 5px;
-  background-color: rgb(147, 218, 42);
-  color: white  ;
-  cursor: pointer;
+  width: 300px;
+  text-align: center;
 }
