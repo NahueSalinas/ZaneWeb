@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import SignUp from "./SignUp";
+import SignIn from "./SignIn";
 
 const View = () => {
     const [isSignedUp, setIsSignedUp] = useState(false);
+    const [isSignedIn, setIsSignedIn] = useState(false);
     const handleSignUpClick = () => {
         setIsSignedUp(true);
     };
+    const handleSignInClick = () =>{
+        setIsSignedIn(true);
+    }
     const closePopup = () => {
         setIsSignedUp(false);
+        setIsSignedIn(false);
     };
 
     return (
         <div>
             <div className="top-navigation">
-                <button className="nav-button">Sign In</button>
+                <button className="nav-button" onClick={handleSignInClick}>Sign In</button>
                 <button className="nav-button" onClick={handleSignUpClick}>Sign Up</button>
 
                 <div className="hamburger-menu">
@@ -56,6 +62,7 @@ const View = () => {
                 <p>Social media platforms.</p>
             </div>
             {isSignedUp && <SignUp onClose={closePopup} />}
+            {isSignedIn && <SignIn onClose={closePopup} />}
         </div>
     );
 }

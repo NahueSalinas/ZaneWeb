@@ -4,11 +4,13 @@ import React, { useState } from "react";
 const SignUp = ({ onClose }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const handleSignOn = async () =>{
         try{
             const response = await axios.post('http://localhost:8000/SignUp', {
-               username,
-               password 
+               "username": username,
+               "password": password,
+               "email": email
             });
             console.log("user created: ", response.data);
        
@@ -16,12 +18,14 @@ const SignUp = ({ onClose }) => {
         catch(error){
             console.log(error);
         }
-        
+       
+       
     }
     const handleSubmit = (e) => {
         e.preventDefault(); 
         handleSignOn();
         onClose();
+        alert("Account created successfully");
     };
 
     return (
@@ -36,6 +40,16 @@ const SignUp = ({ onClose }) => {
                                 type="text"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Email:
+                            <input 
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
                     </div>
