@@ -8,10 +8,6 @@ const ReviewsComponent = () => {
   const [error, setError] = useState(null);
 
   const loadReviews = async () => {
-    // Load mock reviews (ensure this function is defined somewhere) => cuando usamos chat gpt leemos lo comentarios por lo menops :)
-    // loadMockReviews();
-
-    // Fetch actual reviews
     try {
       const response = await axios.get('http://localhost:8000/GetReviews');
       setReviews(response.data.data); // Adjust according to your API response structure
@@ -32,7 +28,7 @@ const ReviewsComponent = () => {
       <div>
         {reviews.map(review => (
           <div key={review.id} className="review">
-            {review.text} {/* Adjust according to your data structure */}
+            {review.text}
           </div>
         ))}
       </div>

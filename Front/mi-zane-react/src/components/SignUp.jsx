@@ -13,10 +13,11 @@ const SignUp = ({ onClose }) => {
                "email": email
             });
             console.log("user created: ", response.data);
-       
+            alert("Account created successfully");
         }
         catch(error){
             console.log(error);
+            alert("Account already exist or there is a problem with the server")
         }
        
        
@@ -25,7 +26,6 @@ const SignUp = ({ onClose }) => {
         e.preventDefault(); 
         handleSignOn();
         onClose();
-        alert("Account created successfully");
     };
 
     return (

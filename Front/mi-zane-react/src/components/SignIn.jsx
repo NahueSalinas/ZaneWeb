@@ -9,13 +9,15 @@ const SignIn = ({onClose}) =>{
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleSignOn = async() =>{
         try{
-            const response = await axios.get('http:localhost:8000/LoggedIn');
+            const response = await axios.post('http://localhost:8000/LoggedIn', {
+            "password": password,
+            "email": email
+            });
+            console.log(response);
             setIsPassword(response.data.password);
             setIsEmail(response.data.email);
-            if(email == isEmail && password == isPassword){
-                alert("logged in successfully");
-                setIsLoggedIn(true);
-            }
+            alert("logged in successfully");
+            setIsLoggedIn(true);
         }
         catch(error){
          console.log(error);   

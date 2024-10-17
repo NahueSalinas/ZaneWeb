@@ -1,7 +1,7 @@
 const Models = require('./Models');
 exports.LoggedIn = async (request, reply) => {
     const data = request.body;
-    console.log(data);
+    console.log("data: " + data);
     const modelResponse = await Models.logIn(data.email, data.password);
 
     return reply.status(modelResponse.statusCode).send({

@@ -1,56 +1,30 @@
 // src/components/SubmitReviewComponent.jsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-const SubmitReviewComponent = ({ isSignedIn }) => {
-  const [reviewText, setReviewText] = useState('');
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState('');
+const SubmitReviewComponent = () => {
+  const [reviewText, setReviewText] = useState("");
 
-  const handleSubmit = async () => {
-    if (!isSignedIn) {
-      alert('You must be signed in to submit a review.');
-      return;
-    }
 
-    // Log the review being submitted
-    console.log('Submitting review:', reviewText);
 
+  const handleReview = async() => {
     try {
       const response = await axios.post('http://localhost:8000/PostReviews', {
-        review: reviewText,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        "review": reviewText,
+        "email" : Email
       });
-
-      setSuccessMessage(response.data.message);
-      setReviewText(''); // Clear the textarea after submission
-      console.log('Review submitted successfully:', response.data.message);
-    } catch (error) {
-      const errorMessage = error.response ? error.response.data.message : error.message;
-      setError(errorMessage);
-      console.error('Error:', errorMessage);
-    }
-  };
-
-  const updateReviewText = (text) => {
-    setReviewText(text);
-  };
-
-  useEffect(() => {
-    // Expose functions to the global window object
-    window.handleSubmitReview = handleSubmit;
-    window.updateReviewText = updateReviewText;
-
-    // Clean up to avoid memory leaks
-    return () => {
-      delete window.handleSubmitReview;
-      delete window.updateReviewText;
-    };
-  }, [handleSubmit]);
+      alert("Review created successfully");
+  } catch(error) {
+    console.error('Error:' + error);
+    alert("Problems encountered while posting the review");
+  }
+}
+    
+const handleSubmit = (e) => {
+  e.preventDefault(); 
+  handleReview();
+};
 
   return (
     <div>
@@ -58,12 +32,12 @@ const SubmitReviewComponent = ({ isSignedIn }) => {
       <textarea
         id="review-text"
         value={reviewText}
-        onChange={(e) => updateReviewText(e.target.value)}
         placeholder="Write your review here..."
+        onChange={(e) => setReviewText(e.target.value)}
       />
-      <button>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
 
-export default SubmitReviewComponent;
+export default SubmitReviewComponent

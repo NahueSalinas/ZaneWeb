@@ -7,8 +7,7 @@ import UserCounter from './components/UserCounter';
 import View from './components/View';
 
 const App = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false); // Change this based on your authentication logic
-  document.getElementById('root') // Este es el div del HTML
+  const [isSignedIn, setIsSignedIn] = useState(false); 
   return (
     <div>
       <View />
