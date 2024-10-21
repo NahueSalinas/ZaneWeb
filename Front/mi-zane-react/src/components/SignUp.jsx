@@ -14,6 +14,7 @@ const SignUp = ({ onClose }) => {
             });
             console.log("user created: ", response.data);
             alert("Account created successfully");
+            localStorage.setItem('Email', email);
         }
         catch(error){
             console.log(error);

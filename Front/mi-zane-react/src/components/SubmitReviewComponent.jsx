@@ -10,10 +10,12 @@ const SubmitReviewComponent = () => {
 
   const handleReview = async() => {
     try {
+      var Email = localStorage.getItem('Email');
       const response = await axios.post('http://localhost:8000/PostReviews', {
         "review": reviewText,
-        "email" : Email
+        "Email": Email
       });
+      console.log("review created" + response.data)
       alert("Review created successfully");
   } catch(error) {
     console.error('Error:' + error);
@@ -24,6 +26,7 @@ const SubmitReviewComponent = () => {
 const handleSubmit = (e) => {
   e.preventDefault(); 
   handleReview();
+  window.location.reload(); // Recarga toda la página
 };
 
   return (
