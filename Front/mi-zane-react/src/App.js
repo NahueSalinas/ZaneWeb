@@ -5,6 +5,7 @@ import ReviewsComponent from './components/ReviewsComponent';
 import SubmitReviewComponent from './components/SubmitReviewComponent';
 import UserCounter from './components/UserCounter';
 import View from './components/View';
+import footer from './components/footer';
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false); 
